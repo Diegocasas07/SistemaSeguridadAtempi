@@ -1,0 +1,269 @@
+
+.Cuerpo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.form {
+  width: 450px;
+}
+
+
+:root{
+    --Blanco:	#FFFFFF;
+     
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background: var(--blanco);
+    font-family: "Open Sans" , sans-serif;
+}
+
+.contenedor{
+    width: 90%;
+    margin: auto;
+      
+}
+
+header{
+    padding: 30px 0;
+    
+}
+
+header.contenedor{
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+header nav a {
+    color: #AAA;
+    text-decoration: none;
+    margin-right:20px;  
+    
+}
+
+header nav a :hover ,
+header nav a.activo{
+    
+    color: #696969;
+}
+
+header nav dropdown{
+    
+    float: right;
+}
+
+/*------------------------contenedor Titulo y Controle--------------*/
+
+.contenedor-titulo-controles{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.contenedor-titulo-controles h3{
+    
+    color: #696969;
+    font-size: 30px;
+}
+/*contenedor principal y flechas*/
+
+.recomendaciones-atempi{
+    
+    margin: 70px;
+}
+
+.recomendaciones-atempi .contenedor-principal{
+    
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.recomendaciones-atempi .contenedor-principal .flecha-izquierda,
+.recomendaciones-atempi .contenedor-principal .flecha-derecha{
+    
+    position: absolute;
+    border: none;
+    background:rgba(120, 120, 120,0.9);
+    font-size:40px;
+    height: 50%;
+    top: calc(50% - 25%);
+    line-height: 40px;
+    width: 50px;
+    color: #FFF;
+    cursor: pointer;
+    z-index: 500;
+    transition: .2s ease all;   
+        
+}
+
+.recomendaciones-atempi .contenedor-principal .flecha-izquierda:hover,
+.recomendaciones-atempi .contenedor-principal .flecha-derecha:hover{
+    
+    background: rgba(90, 90, 90,.9);
+    
+    
+}
+
+.recomendaciones-atempi .contenedor-principal .flecha-izquierda{
+    
+    left: 0;
+}
+
+.recomendaciones-atempi .contenedor-principal .flecha-derecha{
+    
+    right:  0;
+}
+
+/*------------------------Carrusel----------------------------*/
+
+.recomendaciones-atempi .contenedor-carrusel{
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+   scroll-behavior: smooth;
+    
+}
+
+.recomendaciones-atempi .contenedor-carrusel .carrusel{
+    
+    display: flex;
+    flex-wrap: nowrap;
+    
+}
+
+.recomendaciones-atempi .contenedor-carrusel .carrusel .pagina-recomendacion{
+min-width: 33%;
+transition: .3s ease all;
+box-shadow: 5px 5px 10px rgba(90, 90, 90,.3);
+
+}
+
+.recomendaciones-atempi .contenedor-carrusel .carrusel .pagina-recomendacion.hover{
+    transform: scale(1.2);
+    transform-origin: center;
+    
+}
+
+
+.recomendaciones-atempi .contenedor-carrusel .carrusel .pagina-recomendacion img{
+    
+    width: 100%;
+    vertical-align: top;
+    
+}
+/*Video de la pagina de inicio*/
+
+.imagen-princpial{
+    font-size: 12px;
+    min-height: 40.62em;
+    color: #FFF;
+    background:  linear-gradient(rgba(220,220,202, .45) 0%,rgba(255,250,250, .45) 100%) ,url(../img/seguridad.jpg);
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 3.12em;
+    display: flex;
+    align-items: end;
+}
+
+.imagen-princpial .contenedor{
+    margin:0 auto;
+    margin-bottom: 6.25em;
+}
+
+.imagen-princpial .titulo{
+    
+    font-weight: 600;
+    font-size: 3.12em;
+    margin-bottom: 0.4em;
+}
+
+.imagen-princpial .descripcion{
+    
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    max-width: 50%;
+    margin-bottom: 1.25em;
+    
+}
+
+.imagen-princpial .boton{
+    background: rgba(120, 120, 120,0.50);
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em 1.87em;
+    color:#FFF;
+    margin-right: 1.25em;
+    cursor: pointer;
+    transition: .3s ease all;
+    font-size: 1.12em;
+    
+    
+}
+
+.imagen-princpial .boton:hover {
+    background:#696969;
+    color: #AAA;
+    
+}
+
+.imagen-princpial .boton i{
+    
+    margin-right: 1.25em;
+}
+
+/*----------Media Queries----------*/
+
+@media screen and (max-width:800px){
+    
+    header .img {
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+    
+    header .contenedor{
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .imagen-princpial {
+        font-size: 14px;
+    }
+    
+    .imagen-princpial .descripcion{
+        max-width: 100%;
+    }
+    
+    .recomendaciones-atempi .contenedor-carrusel{
+        overflow: visible;
+    }
+    
+    .recomendaciones-atempi .contenedor-carrusel .carrusel{
+        
+        display: flex;
+        grid-template-columns: repeat(3 , 1fr);
+        gap:20px;
+        
+    }
+    
+    .recomendaciones-atempi .indicadores,
+    .recomendaciones-atempi .flecha-izquierda,
+    .recomendaciones-atempi .flecha-derecha{
+        display: none;
+    }
+}
